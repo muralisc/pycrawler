@@ -2,3 +2,4 @@ crawler_env
 __pycache__
 *.out
 *.log
+*.pyc
