@@ -1,14 +1,21 @@
 #!/bin/python
 
 import crawler
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+import logging
 
+log_level = logging.INFO
+logging.basicConfig(level=log_level)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-@app.route('/crawl')
+@app.route('/crawl', methods = ['POST'])
 def hello_world():
-    c = crawler.Crawler("https://www.rust-lang.org/", 1)
+    url = request.form['url']
+    depth =  request.form['depth']
+    logger.info("Recieved request for url: "+url+ " depth: " + depth )
+    c = crawler.Crawler(url, int(depth))
     site_map = c.crawl()
     return jsonify( dict(site_map) )
 
