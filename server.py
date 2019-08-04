@@ -4,7 +4,7 @@ import crawler
 from flask import Flask, jsonify, request
 import logging
 
-log_level = logging.INFO
+log_level = logging.DEBUG
 logging.basicConfig(level=log_level)
 logger = logging.getLogger(__name__)
 

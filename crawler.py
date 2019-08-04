@@ -33,7 +33,7 @@ class Url:
 
 
     def isSameDomain(self, that):
-        logger.debug("Comparing domain:")
+        logger.debug("Comparing domains:")
         logger.debug(str(self.parsed_url))
         logger.debug(str(that.parsed_url))
         if str(that.parsed_url.path).find(self.parsed_url.path) >= 0:
