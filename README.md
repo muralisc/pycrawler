@@ -29,6 +29,12 @@ python3 client.py <Server URL> <Site to crawl> <Depth> | jq '.'
 python3 client.py http://127.0.0.1:5000/crawl https://github.com/muralisc/dotfiles 1 | jq '.'
 ```
 
+### Test
+
+```
+python3 crawler_test.py
+```
+
 #### Curl cli
 
 ```
